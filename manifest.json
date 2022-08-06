@@ -4,7 +4,7 @@
     "description": "Empornium Extension",
     "version": "1.0.0",
     "permissions": [
-        "tabs"
+        "activeTab"
     ],
     "host_permissions": [
         "https://*.empornium.is/*"
