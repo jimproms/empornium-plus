@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Empornium Plus",
+    "description": "Empornium Extension",
+    "version": "1.0.0",
+    "permissions": [
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://*.empornium.is/*"
+    ],
+    "content_scripts": [
+    {
+    "matches": ["https://*.empornium.is/torrents.php*"],
+    "css": ["main.css"],
+    "js": ["contentScript.js"]
+    }
+    ],
+   "action": {
+    "default_icon": "img.png",
+    "default_popup": "popup.html",
+    "default_title": "Empornium Plus"
+    }
+   }
+   
