@@ -20,6 +20,12 @@
     "default_icon": "img.png",
     "default_popup": "popup.html",
     "default_title": "Empornium Plus"
-    }
+    },
+    "icons": {
+        "16": "img.png",
+        "32": "img.png",
+        "48": "img.png",
+        "128": "img.png"
+      }
    }
    
