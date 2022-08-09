@@ -8,7 +8,7 @@ Modifies the Empornium torrents page so that the summary image of the torrent is
 To install:
 
 1) Download the release zip: https://github.com/jimproms/empornium-plus/raw/main/Release/empornium-plus.zip
-2) Unzip to somewher on your computer
+2) Unzip to somewhere on your computer
 3) Go to chrome://extensions/ in Chrome and turn on the Developer option in the top right
 4) Click "Load Unpacked" and browse to where you unzipped the zip file
 5) Refresh your Empornium page!
