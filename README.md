@@ -15,3 +15,4 @@ To install:
 
 ![Chrome](https://user-images.githubusercontent.com/110262393/183752612-0fe1d456-8358-406f-9c0e-28d22f95a9bc.PNG)
 
+6) Click the extension icon to change the options:
