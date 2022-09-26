@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Empornium Plus Options</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+
+  <h1>Options</h1>
+
+  <div class="option">
+  <label>
+    <input type="checkbox" id="hideForum">
+    Hide forum posts
+  </label>
+  </div>
+
+  <div class="option">
+  <label>
+  <input type="checkbox" id="hideCategories">
+    Hide categories
+  </label>
+  </div>
+
+  <div class="slidecontainer">
+    <p>Thumbnail Image Size: <span id="thumbSizeValue"></span></p>
+    <input type="range" min="100" max="800" value="250" class="slider" id="thumbSizeSlider">
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

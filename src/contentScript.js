@@ -1,11 +1,13 @@
-const checkTimeout = 100;
+const checkImagesTimeout = 100;
+const checkSettingsTimeout = 500;
+let thumbnailSize = 250;
 
 function CheckImages() {
  
     var rows = document.getElementsByClassName("torrent");
  
     if(rows.length == 0) {
-       setTimeout(CheckImages, checkTimeout);
+       setTimeout(CheckImages, checkImagesTimeout);
     }
     else {
         Array.from(document.getElementsByClassName("torrent")).forEach(
@@ -20,14 +22,43 @@ function CheckImages() {
                     const sourceImg = script.substring(sourceImgStart, sourceImgEnd).replace(/\\/g, '');;
                     console.log(sourceImg);
 
-                    targetImg.width = 250;
+                    targetImg.width = thumbnailSize;
                     targetImg.src = sourceImg;
                 }
             }
         );
     }
  }
- 
- setTimeout(CheckImages, checkTimeout);
+
+ function CheckSettings() {
+    chrome.storage.sync.get({
+        hideForum: false,
+        hideCategories: false,
+        thumbnailSize: 250
+      }, function(items) {
+        if(items.hideForum) {
+            document.getElementsByClassName("latest_threads")[0].style.display = "none";
+            document.getElementsByClassName("latest_threads")[1].style.display = "none";
+        } else {
+            document.getElementsByClassName("latest_threads")[0].style.display = "block";
+            document.getElementsByClassName("latest_threads")[1].style.display = "block";
+        }
+
+        if(items.hideCategories) { 
+            document.getElementById("cat_list").style.display = "none";
+        } else {
+            document.getElementById("cat_list").style.display = "block";
+        }
+
+        if(items.thumbnailSize !== thumbnailSize) {
+          thumbnailSize = items.thumbnailSize;
+          CheckImages();
+        }
+      });
+ }
+
+CheckSettings();
+setTimeout(CheckImages, checkImagesTimeout);
+setInterval(CheckSettings, checkSettingsTimeout);
 
  

@@ -4,21 +4,22 @@
     "description": "Empornium Extension",
     "version": "1.0.0",
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "storage"
     ],
     "host_permissions": [
         "https://*.empornium.is/*"
     ],
     "content_scripts": [
     {
-    "matches": ["https://*.empornium.is/torrents.php*"],
+    "matches": ["https://*.empornium.is/torrents.php*", "https://*.empornium.is/collages.php*"],
     "css": ["main.css"],
     "js": ["contentScript.js"]
     }
     ],
    "action": {
     "default_icon": "img.png",
-    "default_popup": "popup.html",
+    "default_popup": "options.html",
     "default_title": "Empornium Plus"
     },
     "icons": {
@@ -26,6 +27,10 @@
         "32": "img.png",
         "48": "img.png",
         "128": "img.png"
-      }
-   }
+      },
+    "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+    }
+}
    
