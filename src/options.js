@@ -36,7 +36,7 @@ document.getElementById('thumbSizeSlider').addEventListener('change', save_optio
 
 // Update the current slider value (each time you drag the slider handle)
 var slider = document.getElementById("thumbSizeSlider");
-var output = document.getElementById('thumbSizeSlider');
+var output = document.getElementById('thumbSizeValue');
 slider.oninput = function() {
   output.innerHTML = this.value;
 }
